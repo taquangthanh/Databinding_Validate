@@ -13,11 +13,11 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    @NotNull( message = "Không được để trống")
+    @NotEmpty( message = "Không được để trống")
     private String name;
-    @NotNull( message = "Không được để trống")
+    @NotEmpty( message = "Không được để trống")
     private String address;
-    @NotNull(message = "Không được để trống")
-    @Pattern(regexp = "^0.*$")
+    @Size(min = 10,max = 10,message = "Phone 10 số")
+    @Pattern(regexp = "0[0-9]{9}")
     private String phone ;
 }
